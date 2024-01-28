@@ -3,7 +3,7 @@ import { Detail } from './Detail'
 import { SearchContext } from '../../../contexts/SearchContext';
 import './Card.css'
 
-function Card ({ image, title, price, description }) {
+function Card({ image, title, price, description }) {
     const {
         setIsOpen,
         setImageProduct,
@@ -23,11 +23,11 @@ function Card ({ image, title, price, description }) {
     return (
         <div className='CardContainer' onClick={openModal}>
             <div className='ProductImageContainer'>
-                <img src={image}/>
+                <img src={image} />
             </div>
-            <Detail 
-                title = {title}
-                price = {price}
+            <Detail
+                title={title}
+                price={price}
             />
         </div>
     )
