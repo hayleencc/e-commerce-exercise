@@ -1,0 +1,16 @@
+.AddToCartContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.AddToCartButton {
+    background-color: rgb(255, 72, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16p;
+    font-weight: bold;
+    cursor: pointer;
+}
