@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './TypeFilter.css'
 
 function TypeFilter ({name, options}) {
@@ -15,6 +16,11 @@ function TypeFilter ({name, options}) {
             )}
         </div>
     )
+}
+
+TypeFilter.propTypes = {
+    name: PropTypes.string.isRequired,
+    options: PropTypes.object.isRequired
 }
 
 export { TypeFilter }

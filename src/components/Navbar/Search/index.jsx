@@ -17,7 +17,7 @@ function Search () {
                     setSearchValue(event.target.value);
                 }}
             />
-            <img src='src/assets/loupe.png'/>
+            <img src='src/assets/loupe.png'alt="loupe"/>
         </div>
     )
 }

@@ -22,7 +22,7 @@ function Modal () {
             <div className='ContentModalContainer'>
                 <div className='ProductImageContainer'>
                     <AiOutlineCloseCircle className='closeModal' onClick={setCloseModal}/>
-                    <img src={imageProduct}/>
+                    <img src={imageProduct} alt={titleProduct}/>
                 </div>
                 <div className="DetailsModalContainer">
                     <div className="HeaderDetailModalContainer">
