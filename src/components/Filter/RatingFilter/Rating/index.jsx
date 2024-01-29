@@ -25,6 +25,6 @@ function Rating ( {stars} ) {
 }
 
 Rating.propTypes = {
-    stars: PropTypes.number.isRequired
+    stars: PropTypes.string.isRequired
 }
 export { Rating }
