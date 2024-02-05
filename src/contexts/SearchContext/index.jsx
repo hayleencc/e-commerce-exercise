@@ -12,7 +12,8 @@ function SearchProvider({ children }) {
   const [titleProduct, setTitleProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
   const [descriptionProduct, setDescriptionProduct] = useState("");
-  const [order, setOrder] = useState("");
+  const [order, setOrder] = useState("Name");
+  const [categories, setCategories] = useState([]);
 
   const getData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -33,23 +34,47 @@ function SearchProvider({ children }) {
     fetchData();
   }, []);
 
-
-  const searchedProducts = products.filter((product) => {
+  const searchedProducts = products
+  .filter((product) => {
     const productName = product.title.toLowerCase();
     const searchText = searchValue.toLowerCase();
     return productName.includes(searchText);
-  }).sort((a, b) => {
-    if (order === "Name") {
-      return a.title.localeCompare(b.title);
+  })
+  .sort((a, b) => filterProductsByPriceOrName(a, b, order)).filter((product) => {
+    if (categories.length === 0) {
+      return true;
     }
-    if (order === "Price_Low") {
-      return a.price - b.price;
-    }
-    if (order === "Price_High") {
-      return b.price - a.price;
-    }
+    return categories.includes(product.category);
   });
 
+
+function filterProductsByPriceOrName(a, b, order) {
+  if (order === "Name") {
+    return a.title.localeCompare(b.title);
+  }
+  else if (order === "Price_Low") {
+    return a.price - b.price;
+  }
+  else if (order === "Price_High") {
+    return b.price - a.price;
+  }
+  else {
+    console.warn("Invalid sorting order value");
+    return 0;
+  }
+}
+
+const modifyingCategories = (id) => {
+  setCategories((prevCategories) => {
+    const categoryExists = prevCategories.includes(id);
+
+    if (categoryExists) {
+      return prevCategories.filter((category) => category !== id);
+    } else {
+      return [...prevCategories, id];
+    }
+  });
+};
 
 
 
@@ -72,6 +97,9 @@ function SearchProvider({ children }) {
         setDescriptionProduct,
         order,
         setOrder,
+        categories,
+        setCategories,
+        modifyingCategories
       }}
     >
       {children}
