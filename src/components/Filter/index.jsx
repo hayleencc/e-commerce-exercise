@@ -1,8 +1,12 @@
 import { TypeFilter } from './TypeFilter'
 import { RatingFilter } from './RatingFilter'
+import { useContext } from 'react';
+import { SearchContext } from '../../contexts/SearchContext';
+
 import './Filter.css'
 
 function Filter () {
+    const {modifyingCategories} = useContext(SearchContext);
     return (
         <div className='FilterContainer'>
             <TypeFilter
@@ -13,6 +17,7 @@ function Filter () {
                     {id: "jewelery", label: "Jewelery"},
                     {id: "electronics", label: "Electronics"}
                 ]}
+                onCategoryChange={modifyingCategories}
             />
             <RatingFilter />
         </div>
