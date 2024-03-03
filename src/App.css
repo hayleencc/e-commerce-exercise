@@ -10,3 +10,22 @@
   column-gap: 70px;
   padding: 30px 35px;
 }
+
+@media screen and (max-width: 768px) {
+
+  #root{
+    display: grid;
+    grid-template-rows: "navbar infobar results";
+    align-items: center;
+  }
+  
+}
+
+@media screen and (max-width: 1500px){
+  .content-ResultandFilter{
+    display: flex;
+    position: relative; 
+    overflow-y: auto;
+  }
+
+}

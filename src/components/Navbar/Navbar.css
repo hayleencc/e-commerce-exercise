@@ -4,3 +4,19 @@
     padding: 15px;
     justify-content: space-between;
 }
+
+
+@media screen and (max-width: 768px) {
+    .NavbarContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .NavbarContainer .cartLogoContainer{
+        margin-left: 10px;
+    }
+
+    .NavbarContainer .LogoContainer{
+        margin-right: 10px;
+    }
+}

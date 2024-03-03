@@ -4,12 +4,19 @@
 
 .ResultContainer .CardResultsContainer {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 5%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    row-gap: 2rem;
+    column-gap: 5%;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
+
+/* @media screen and (max-width: 768px) {
+    .ResultContainer .CardResultsContainer {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+} */
 
 .loader {
     width: 100px;
