@@ -7,8 +7,10 @@ import PropTypes from 'prop-types'
 
 
 function RatingValue({ value, onClick }) {
+    const { selectedRate } = useContext(SearchContext);
+  
     return (
-      <div className='RatingValue' onClick={() => onClick(value)}>
+      <div className={`RatingValue ${selectedRate === value ? 'selected' : ''}`} onClick={() => onClick(value)}>
         <Rating stars={value} />
       </div>
     );
