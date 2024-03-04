@@ -22,17 +22,14 @@ RatingValue.propsTypes = {
   
 
 function RatingFilter ({ ratings }) {
-    const {setSelectedRate} = useContext(SearchContext);
+    const { setSelectedRate} = useContext(SearchContext);
 
-    const handleRatingChange = (rate) => {
-        setSelectedRate(rate);
-    }
     return (
         <div className='RatingFilterContainer'>
             <h2>Rates:</h2>
             <div className='RatingsContainer'>
                 {ratings.map((rating) => (
-                    <RatingValue key={rating} value={rating} onClick={handleRatingChange} />
+                    <RatingValue key={rating} value={rating} onClick={()=>setSelectedRate(rating)} />
                 ))}
             </div>
         </div>

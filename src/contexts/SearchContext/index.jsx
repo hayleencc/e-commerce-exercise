@@ -44,9 +44,9 @@ function SearchProvider({ children }) {
   })
   .sort((a, b) => filterProductsByPriceOrName(a, b, order)).filter((product) => {
     if (categories.length === 0) {
-      return true;
+      return product.rating.rate >= selectedRate;
     }
-    return categories.includes(product.category);
+    return categories.includes(product.category) && product.rating.rate >= selectedRate;
   });
 
 
