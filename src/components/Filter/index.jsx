@@ -7,6 +7,7 @@ import './Filter.css'
 
 function Filter () {
     const {modifyingCategories} = useContext(SearchContext);
+    const ratings = [4, 3, 2, 1];
     return (
         <div className='FilterContainer'>
             <TypeFilter
@@ -19,7 +20,7 @@ function Filter () {
                 ]}
                 onCategoryChange={modifyingCategories}
             />
-            <RatingFilter />
+            <RatingFilter ratings={ratings} />
         </div>
     )
 }
