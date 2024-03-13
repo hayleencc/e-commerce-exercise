@@ -11,7 +11,6 @@ function SearchProvider({ children }) {
   const [imageProduct, setImageProduct] = useState("");
   const [titleProduct, setTitleProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
-  const [quantityProduct, setQuantityProduct] = useState(1);
   const [descriptionProduct, setDescriptionProduct] = useState("");
   const [order, setOrder] = useState("Name");
   const [categories, setCategories] = useState([]);
@@ -107,8 +106,6 @@ const modifyingCategories = (id) => {
         setSelectedRate,
         rateProduct,
         setRateProduct,
-        quantityProduct,
-        setQuantityProduct,
       }}
     >
       {children}

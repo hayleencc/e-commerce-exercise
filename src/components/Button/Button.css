@@ -2,69 +2,15 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 125px;
 }
 
 .AddToCartButton {
-    background-color: green;
-    color: green;
+    background-color: rgb(255, 72, 0);
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 16p;
     font-weight: bold;
-    cursor: pointer; 
+    cursor: pointer;
 }
-
-.AddToCartButton:hover {
-    background-color: white;
-    color: green;
-    border: 1px solid green;
-}
-
-.AddToCartButton:active {
-    background-color: green;
-    color: white;
-}
-
-.QuantityContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.QuantityContainer .RemoveButton {
-    color: white;
-    padding: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer; 
-}
-
-.QuantityContainer .AddButton{
-    color: white;
-    padding: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer; 
-}
-
-.QuantityContainer .AddButton:hover {
-    color: gray;
-}
-
-.QuantityContainer .RemoveButton:hover {
-    color: gray;
-}
-
-@media screen and (max-width: 768px){
-    .AddToCartContainer{
-        gap: 75px;
-    }
-    
-}
-

@@ -16,6 +16,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .ContentModalContainer .ProductImageContainer {
@@ -54,10 +55,4 @@
 .ContentModalContainer .DetailsModalContainer .HeaderDetailModalContainer {
     display: flex;
     justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-    .ContentModalContainer {
-        height: 25%;
-    }
 }
