@@ -18,6 +18,7 @@ function SearchProvider({ children }) {
   const [categories, setCategories] = useState([]);
   const [selectedRate, setSelectedRate] = useState(1);
   const [rateProduct, setRateProduct] = useState(1);
+  const [cartProducts, setCartProducts] = useState([]); // [ { id: 1, quantity: 1 }, { id: 2, quantity: 2 }
   const getData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
