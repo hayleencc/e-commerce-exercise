@@ -112,6 +112,8 @@ const modifyingCategories = (id) => {
         setQuantityProduct,
         maxQuantityProduct,
         setMaxQuantityProduct,
+        cartProducts,
+        setCartProducts,
       }}
     >
       {children}
