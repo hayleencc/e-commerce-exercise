@@ -9,8 +9,8 @@
 }
 
 .AddToCartButton {
-    background-color: rgb(7, 207, 7);
-    color: white;
+    background-color: green;
+    color: green;
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -18,9 +18,16 @@
     font-weight: bold;
     cursor: pointer; 
 }
+
 .AddToCartButton:hover {
-    background-color: beige;
+    background-color: white;
     color: green;
+    border: 1px solid green;
+}
+
+.AddToCartButton:active {
+    background-color: green;
+    color: white;
 }
 
 .QuantityContainer {

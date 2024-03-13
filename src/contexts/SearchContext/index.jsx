@@ -11,13 +11,13 @@ function SearchProvider({ children }) {
   const [imageProduct, setImageProduct] = useState("");
   const [titleProduct, setTitleProduct] = useState("");
   const [priceProduct, setPriceProduct] = useState("");
-  const [maxQuantityProduct, setMaxQuantityProduct] = useState(1);
   const [quantityProduct, setQuantityProduct] = useState(1);
   const [descriptionProduct, setDescriptionProduct] = useState("");
   const [order, setOrder] = useState("Name");
   const [categories, setCategories] = useState([]);
   const [selectedRate, setSelectedRate] = useState(1);
   const [rateProduct, setRateProduct] = useState(1);
+
   const getData = async () => {
     const response = await fetch("https://fakestoreapi.com/products");
     const data = await response.json();
@@ -109,8 +109,6 @@ const modifyingCategories = (id) => {
         setRateProduct,
         quantityProduct,
         setQuantityProduct,
-        maxQuantityProduct,
-        setMaxQuantityProduct,
       }}
     >
       {children}

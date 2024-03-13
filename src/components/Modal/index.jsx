@@ -12,15 +12,11 @@ function Modal () {
         titleProduct,
         priceProduct,
         descriptionProduct,
-        rateProduct,
-        quantityProduct,
-        maxQuantityProduct,
-        setQuantityProduct
+        rateProduct
     } = useContext(SearchContext);
 
     const setCloseModal = () => {
         setIsOpen(false)
-        setQuantityProduct(1)
     }
 
     return (
@@ -37,7 +33,7 @@ function Modal () {
                     </div>
                     <Rating stars={rateProduct}/>
                     <h6>{descriptionProduct}</h6>
-                    <CartButton countProduct={quantityProduct} maxCountProduct={maxQuantityProduct} />
+                    <CartButton />
                 </div>
             </div>
         </div>
