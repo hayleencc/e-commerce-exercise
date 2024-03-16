@@ -38,6 +38,19 @@ function SearchProvider({ children }) {
     fetchData();
   }, []);
 
+  const addProductToCart = (title, image, price, quantity, ) => {
+    const productIndex = cartProducts.findIndex((cartProduct) => cartProduct.title === title);
+    if (productIndex === -1) {
+      setCartProducts((prevCartProducts) => [...prevCartProducts, { title: title, image: image, price: price, quantity: quantity }]);
+    } else {
+      setCartProducts((prevCartProducts) => {
+        const newCartProducts = [...prevCartProducts];
+        newCartProducts[productIndex].quantity += quantity;
+      });
+    }
+  }
+  
+
   const searchedProducts = products
   .filter((product) => {
     const productName = product.title.toLowerCase();
@@ -114,6 +127,7 @@ const modifyingCategories = (id) => {
         setMaxQuantityProduct,
         cartProducts,
         setCartProducts,
+        addProductToCart
       }}
     >
       {children}

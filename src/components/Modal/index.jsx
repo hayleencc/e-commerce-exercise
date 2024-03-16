@@ -37,7 +37,7 @@ function Modal () {
                     </div>
                     <Rating stars={rateProduct}/>
                     <h6>{descriptionProduct}</h6>
-                    <CartButton countProduct={quantityProduct} maxCountProduct={maxQuantityProduct} />
+                    <CartButton countProduct={quantityProduct} maxCountProduct={maxQuantityProduct} titleProduct={titleProduct} priceProduct={priceProduct} imageProduct={imageProduct} />
                 </div>
             </div>
         </div>

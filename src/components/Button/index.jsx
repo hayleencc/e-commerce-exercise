@@ -4,11 +4,15 @@ import { SearchContext } from '../../contexts/SearchContext';
 import { IoIosRemoveCircleOutline, IoIosAddCircleOutline } from "react-icons/io";
 
 
-function CartButton({countProduct, maxCountProduct}) {
+function CartButton({countProduct, maxCountProduct, titleProduct, priceProduct, imageProduct}) {
     const {
-        setQuantityProduct
+        setQuantityProduct,
+        setIsOpen,
+        setCartProducts,
+        quantityProduct, 
+        cartProducts,
+        addProductToCart
     } = useContext(SearchContext);
-    console.log(countProduct, maxCountProduct)
     const addProduct = () => {
         if(countProduct < maxCountProduct) {
             setQuantityProduct(countProduct + 1)
@@ -19,6 +23,11 @@ function CartButton({countProduct, maxCountProduct}) {
             setQuantityProduct(countProduct - 1)
         }
     }
+    const addToCart = () => {
+        setIsOpen(false)
+        setQuantityProduct(1)
+        addProductToCart(titleProduct, imageProduct, priceProduct, countProduct)
+    }
     return (
         <div className="AddToCartContainer">
             <div className="QuantityContainer">
@@ -26,7 +35,7 @@ function CartButton({countProduct, maxCountProduct}) {
                 <span className='QuantityCounter'>{countProduct}</span>
                 <IoIosAddCircleOutline className='AddButton' onClick={addProduct}/>   
             </div>
-            <button className="AddToCartButton">
+            <button className="AddToCartButton" onClick={addToCart}>
                 Add
             </button>
         </div>
