@@ -1,5 +1,4 @@
 import { Rating } from "../../../Filter/RatingFilter/Rating"
-import { CartButton } from "../../../Button"
 import PropTypes from 'prop-types'
 import './Detail.css'
 
@@ -9,7 +8,6 @@ function Detail({ title, price, rating }) {
             <h3>{title}</h3>
             {rating && <Rating stars={rating} />}
             <h3>${price}</h3>
-            <CartButton />
         </div>
     )
 }

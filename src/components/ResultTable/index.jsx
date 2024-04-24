@@ -25,6 +25,7 @@ function ResultTable () {
                             price = {product.price}
                             description = {product.description}
                             rating = {Math.round(product.rating.rate)}
+                            count = {product.rating.count}
                         />
                     )
                 }
